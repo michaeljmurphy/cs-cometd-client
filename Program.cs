@@ -16,8 +16,10 @@ namespace cometd_cs
 
         static void Main(string[] args)
         {
-            var uri = args[1];
-            var channel = args[2];
+            var uri = args[0];
+            Console.WriteLine("URI: " + uri);
+            var channel = args[1];
+            Console.WriteLine("Channel: " + channel);
 
             BayeuxClient bc = SubToStream(uri, channel).Result;
             manualResetEvent.Set();
